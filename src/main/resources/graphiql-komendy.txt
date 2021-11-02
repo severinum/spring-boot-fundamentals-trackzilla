@@ -1,0 +1,63 @@
+Graphiql :  http://localhost:5001/graphiql
+
+{
+  findAllApplications {
+    id
+  }
+}
+
+
+{
+  findAllApplications {
+    id
+    name
+    owner
+    description
+  }
+}
+
+zmien nazwe pliku data.sql na cos innego aby nie ladowac do DB defaultowych danych
+
+mutation {
+  newApplication(
+    name: "Bug Tracker",
+    owner: "Alfonso Mclaren",
+    description: "App used to track bugs in Java apps"
+  ) {
+    id,
+    name,
+    owner,
+    description
+  }
+}
+
+mutation {
+  newApplication(
+    name: "Invoices Formatter",
+    owner: "Lars Likkonen",
+    description: "App used to format pdf invoices on the flight"
+  ){
+  id, name, owner
+  }
+}
+
+
+Update Owner name mutation ...
+mutation {
+  updateApplicationOwner(newOwner: "Kim Jonesska", id: 1){
+    id,
+    owner,
+    name,
+    description
+  }
+}
+
+Below will generate exception as we don't have id=111
+mutation {
+  updateApplicationOwner(newOwner: "Kim Jonesska", id: 111){
+    id,
+    owner,
+    name,
+    description
+  }
+}
