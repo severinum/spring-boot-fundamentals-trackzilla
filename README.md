@@ -13,3 +13,9 @@ http://localhost:5001/graphiql
 ### Actuator
 
 http://localhost:5001/applications
+
+__Set those properties__
+
+management.endpoints.web.exposure.include=*
+
+management.endpoint.health.show-details=always
